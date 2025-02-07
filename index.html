@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJSU Student Portal</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,22 +38,29 @@
         }
 
         .nav-links {
-            display: none;
-            flex-direction: column;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             background-color: #0033a0;
+            padding: 10px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            padding: 12px;
-            text-align: center;
-            border-top: 1px solid #ffffff55;
-            display: block;
+            padding: 0px 5px;
+            font-size: 10px;
+            font-weight: bold;
+            border-right: 1px solid #ffffff55;
+        }
+
+        .nav-links a:last-child {
+            border-right: none;
         }
 
         .nav-links a:hover {
             background-color: #002280;
+            border-radius: 5px;
         }
 
         .dashboard {
@@ -100,6 +108,15 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .section i {
+            font-size: 20px;
+            color: #0033a0;
         }
 
         .footer {
@@ -147,8 +164,6 @@
         <img src="csa-logo.png" alt="Cal State Apply">
     </div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
-
     <div class="nav-links">
         <a href="#">My Application</a>
         <a href="#">Add Program</a>
@@ -158,30 +173,42 @@
 
     <div class="dashboard">
         <h2>My Application</h2>
-        <p>Your application progress overview.</p>
+        <p>This dashboard is your application home providing access to each part of the application you need to complete
+            and a high level overview of your progress.</p>
 
         <div class="notifications">
-            <h3>Latest Notifications</h3>
-            <p><strong>Welcome to the Cal State Apply application</strong><br>Date: 09/25/2024</p>
+            <h4>Latest Notifications</h4>
             <a href="#">View Notifications</a>
         </div>
 
         <div class="sections">
             <div class="section">
-                <h3>Personal Information</h3>
-                <p>7/7 Sections Completed</p>
+                <i class="fas fa-id-card"></i>
+                <div>
+                    <h3>Personal Information</h3>
+                    <p>7/7 Sections Completed</p>
+                </div>
             </div>
             <div class="section">
-                <h3>Academic History</h3>
-                <p>3/3 Sections Completed</p>
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h3>Academic History</h3>
+                    <p>3/3 Sections Completed</p>
+                </div>
             </div>
             <div class="section">
-                <h3>Supporting Information</h3>
-                <p>1/1 Sections Completed</p>
+                <i class="fas fa-file-alt"></i>
+                <div>
+                    <h3>Supporting Information</h3>
+                    <p>1/1 Sections Completed</p>
+                </div>
             </div>
             <div class="section">
-                <h3>Program Materials</h3>
-                <p>2/2 Sections Completed</p>
+                <i class="fas fa-book"></i>
+                <div>
+                    <h3>Program Materials</h3>
+                    <p>2/2 Sections Completed</p>
+                </div>
             </div>
         </div>
     </div>
@@ -197,7 +224,8 @@
         <p><strong>Subject:</strong> Application Decision - Spring 2025</p>
         <p><strong>Dear Applicant,</strong></p>
         <p>Thank you for applying to the <strong>Master of Science in Data Science</strong> program at SJSU for
-            <strong>Spring 2025</strong>.</p>
+            <strong>Spring 2025</strong>.
+        </p>
         <p>We regret to inform you that due to the limited availability and competitiveness of the program, we are
             unable to offer you admission at this time.</p>
         <p>We appreciate your efforts and encourage you to apply again in the future. Best wishes on your academic
@@ -209,11 +237,6 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
-        }
-
         function showRejection() {
             document.querySelector('.dashboard').style.display = 'none';
             document.querySelector('.rejection').style.display = 'block';
