@@ -75,27 +75,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
         }
 
         .section {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             padding: 20px;
-            flex: 0 1 200px;
+            flex: 1 1 calc(50% - 20px);
             box-sizing: border-box;
-            text-align: center;
-            position: relative;
-        }
-
-        .section h3 {
-            margin-bottom: 10px;
-        }
-
-        .section img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 10px;
         }
 
         .footer {
@@ -113,8 +100,10 @@
             text-align: center;
         }
 
-        .completed {
-            color: green;
+        .rejection p {
+            max-width: 600px;
+            margin: 10px auto;
+            text-align: left;
         }
     </style>
 </head>
@@ -152,23 +141,19 @@
         <div class="sections">
             <div class="section">
                 <h3>Personal Information</h3>
-                <img src="personal-info-icon.png" alt="Personal Information Icon" class="completed">
-                <p class="completed">7/7 Sections Completed</p>
+                <p>7/7 Sections Completed</p>
             </div>
             <div class="section">
                 <h3>Academic History</h3>
-                <img src="academic-history-icon.png" alt="Academic History Icon" class="completed">
-                <p class="completed">3/3 Sections Completed</p>
+                <p>3/3 Sections Completed</p>
             </div>
             <div class="section">
                 <h3>Supporting Information</h3>
-                <img src="supporting-info-icon.png" alt="Supporting Information Icon" class="completed">
-                <p class="completed">1/1 Sections Completed</p>
+                <p>1/1 Sections Completed</p>
             </div>
             <div class="section">
                 <h3>Program Materials</h3>
-                <img src="program-materials-icon.png" alt="Program Materials Icon" class="completed">
-                <p class="completed">2/2 Sections Completed</p>
+                <p>2/2 Sections Completed</p>
             </div>
         </div>
     </div>
@@ -181,14 +166,26 @@
     </div>
 
     <div id="rejection" class="rejection">
-        <h1>San Jose State University</h1>
-        <h2>Graduate Admissions - Fall 2025</h2>
-        <p>Dear Applicant,</p>
-        <p>We regret to inform you that your application for the Master's program at SJSU for Fall 2025 has been denied.
+        <img src="sjsu.png" alt="Cal State Apply" style="max-width: 300px; height: auto; margin-bottom: 50px">
+        <p><strong>From:</strong> grad-admissions@sjsu.edu</p>
+        <p><strong>Subject:</strong> Application Decision - Spring 2025</p>
+        <p><strong>Dear Applicant,</strong></p>
+        <p>Thank you for your application to the <strong>Master of Science in Data Science</strong> program, offered by
+            the <strong>College of Science</strong> for <strong>Spring 2025</strong>.</p>
+        <p>We have reviewed the information you provided in your Spring 2025 Cal State Apply application. We regret to
+            inform you that you did not meet the admission impact standard for applicants to San Jose State University
+            for Spring 2025. </p>
+        <p>Our inability to select you is due, in part, to the limited access and restrictions of our program and the
+            competitiveness of other applicants. Unfortunately, due to these constraints, we were unable to offer you
+            admission at this time.</p>
+        <p>We appreciate the effort and dedication you have shown throughout this process, and we commend you for your
+            commitment to higher education. We encourage you to consider applying again in a future term or exploring
+            other programs that align with your academic and career goals.</p>
+        <p>We wish you continued success in your academic and professional journey.</p>
+        <p>Sincerely,</p>
+        <p><strong>SJSU College of Science</strong><br>
+            <a href="mailto:grad-admissions@sjsu.edu">grad-admissions@sjsu.edu</a>
         </p>
-        <p>Thank you for your interest in our program, and we encourage you to apply again in the future.</p>
-        <p>Best regards,</p>
-        <p><strong>SJSU Admissions Office</strong></p>
     </div>
 
     <script>
