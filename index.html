@@ -100,14 +100,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            /* Centers content horizontally */
             border: 1px solid lightblue;
             font-family: 'Times New Roman', Times, serif;
+            position: relative;
+            /* Allows absolute positioning inside */
+        }
+
+        .section div {
+            flex: 1;
+            /* Allows text to take up available space */
+            text-align: center;
+            /* Centers the text */
         }
 
         .section i {
-            font-size: 20px;
-            color: #0033a0;
+            font-size: 40px;
+            /* Increase icon size */
+            color: #002280;
+            position: absolute;
+            right: 20px;
+            /* Places icon on the right with spacing */
         }
 
         .footer {
@@ -152,28 +165,28 @@
                 <i class="fas fa-id-card"></i>
                 <div>
                     <h3>Personal Information</h3>
-                    <p>7/7 Sections Completed</p>
+                    <p>✅ 7/7 Sections Completed</p>
                 </div>
             </div>
             <div class="section">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
                     <h3>Academic History</h3>
-                    <p>3/3 Sections Completed</p>
+                    <p>✅ 3/3 Sections Completed</p>
                 </div>
             </div>
             <div class="section">
                 <i class="fas fa-file-alt"></i>
                 <div>
                     <h3>Supporting Information</h3>
-                    <p>1/1 Sections Completed</p>
+                    <p>✅ 1/1 Sections Completed</p>
                 </div>
             </div>
             <div class="section">
                 <i class="fas fa-book"></i>
                 <div>
                     <h3>Program Materials</h3>
-                    <p>2/2 Sections Completed</p>
+                    <p>✅ 2/2 Sections Completed</p>
                 </div>
             </div>
         </div>
