@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJSU Student Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #0033a0;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .user-info {
+            font-size: 14px;
+        }
+
+        .navbar {
+            background-color: #0033a0;
+            padding: 10px 20px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard {
+            padding: 20px;
+        }
+
+        .dashboard h2 {
+            color: #0033a0;
+        }
+
+        .notifications {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .notifications a {
+            display: inline-block;
+            background-color: #0033a0;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .notifications a:hover {
+            background-color: #002280;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .section {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            flex: 0 1 200px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h3 {
+            margin-bottom: 10px;
+        }
+
+        .section img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            color: #555;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        .rejection {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .completed {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <img src="csa-logo.png" alt="Cal State Apply" style="max-width: 300px; height: auto;">
+        </div>
+        <div class="user-info">
+            Zohaib Javed | CAS ID: 8743544324 | <a href="#" style="color: white;">Sign Out</a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#">My Application</a>
+            <a href="#">Add Program</a>
+            <a href="#">Submit Application</a>
+            <a href="#" onclick="showRejection()">Check Status</a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <h2>My Application</h2>
+        <p>This dashboard is your application home providing access to each part of the application you need to complete
+            and a high-level overview of your progress.</p>
+
+        <div class="notifications">
+            <h3>Latest Notifications</h3>
+            <p><strong>Welcome to the Cal State Apply application</strong><br>Date: 09/25/2024</p>
+            <a href="#">View My Notifications</a>
+        </div>
+
+        <div class="sections">
+            <div class="section">
+                <h3>Personal Information</h3>
+                <img src="personal-info-icon.png" alt="Personal Information Icon" class="completed">
+                <p class="completed">7/7 Sections Completed</p>
+            </div>
+            <div class="section">
+                <h3>Academic History</h3>
+                <img src="academic-history-icon.png" alt="Academic History Icon" class="completed">
+                <p class="completed">3/3 Sections Completed</p>
+            </div>
+            <div class="section">
+                <h3>Supporting Information</h3>
+                <img src="supporting-info-icon.png" alt="Supporting Information Icon" class="completed">
+                <p class="completed">1/1 Sections Completed</p>
+            </div>
+            <div class="section">
+                <h3>Program Materials</h3>
+                <img src="program-materials-icon.png" alt="Program Materials Icon" class="completed">
+                <p class="completed">2/2 Sections Completed</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        CSU Admissions | <a href="#">Help Center</a> | <a href="#">Contact Us</a> | 857-304-2087<br>
+        The California State University | <a href="#">Privacy Policy</a> | <a href="#">Refund Policy</a> | <a
+            href="#">Accessibility Statement</a><br>
+        &copy; 2023 Liaison International. All Rights Reserved.
+    </div>
+
+    <div id="rejection" class="rejection">
+        <h1>San Jose State University</h1>
+        <h2>Graduate Admissions - Fall 2025</h2>
+        <p>Dear Applicant,</p>
+        <p>We regret to inform you that your application for the Master's program at SJSU for Fall 2025 has been denied.
+        </p>
+        <p>Thank you for your interest in our program, and we encourage you to apply again in the future.</p>
+        <p>Best regards,</p>
+        <p><strong>SJSU Admissions Office</strong></p>
+    </div>
+
+    <script>
+        function showRejection() {
+            document.querySelector('.dashboard').style.display = 'none';
+            document.querySelector('.rejection').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
