@@ -14,6 +14,8 @@
             background-color: #f4f4f4;
         }
 
+
+
         .header {
             background-color: #0033a0;
             color: white;
@@ -138,6 +140,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            border: 1px solid lightblue;
         }
 
         .section i {
@@ -145,23 +148,37 @@
             color: #0033a0;
         }
 
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dashboard,
         .rejection {
+            flex: 1;
+        }
+
+        .rejection {
+            flex: 1;
             display: none;
             padding: 20px;
             text-align: center;
-            min-height: 80vh;
-            /* Ensure it takes most of the screen height */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
 
+
         .footer {
-            position: relative;
+            margin-top: auto;
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            background-color: #f1f1f1;
-            color: #555;
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
-            margin-top: 20px;
         }
 
 
@@ -193,7 +210,8 @@
 <body>
     <div class="header">
         <div class="user-info">
-            <span>Zohaib Javed | CAS ID: 8743544324 | <a href="#" style="color: white; text-decoration: underline;">Sign
+            <span>Zohaib Javed | CAS ID: 8743544324 | <a href="https://www.calstate.edu/apply"
+                    style="color: white; text-decoration: underline;">Sign
                     Out</a></span>
         </div>
         <div class="logo">
@@ -277,8 +295,10 @@
     <script>
         function showRejection() {
             document.querySelector('.dashboard').style.display = 'none';
-            document.querySelector('.rejection').style.display = 'block';
+            document.querySelector('.rejection').style.display = 'flex';
+            document.querySelector('.footer').style.position = 'relative'; // Ensures correct positioning
         }
+
     </script>
 </body>
 
