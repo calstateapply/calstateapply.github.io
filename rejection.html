@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status - SJSU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #0033a0;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            max-width: 200px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            background-color: #0033a0;
+            padding: 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .rejection {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .rejection img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .rejection p {
+            max-width: 600px;
+            margin: 10px auto;
+            text-align: left;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="csa-logo.png" alt="Cal State Apply">
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">My Application</a>
+        <a href="#">Add Program</a>
+        <a href="rejection.html">Check Status</a>
+    </div>
+
+    <div id="rejection" class="rejection">
+        <img src="sjsu.png" alt="SJSU Logo" style="max-width: 200px; margin-bottom: 20px;">
+        <p><strong>From:</strong> grad-admissions@sjsu.edu</p>
+        <p><strong>Subject:</strong> Application Decision - Spring 2025</p>
+        <p><strong>Dear Applicant,</strong></p>
+        <p>Thank you for applying to the <strong>Master of Science in Data Science</strong> program at SJSU for
+            <strong>Spring 2025</strong>.
+        </p>
+        <p>We regret to inform you that due to the limited availability and competitiveness of the program, we are
+            unable to offer you admission at this time.</p>
+        <p>We appreciate your efforts and encourage you to apply again in the future. Best wishes on your academic
+            journey.</p>
+        <p>Sincerely,</p>
+        <p><strong>SJSU College of Science</strong><br>
+            <a href="mailto:grad-admissions@sjsu.edu">grad-admissions@sjsu.edu</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        CSU Admissions | <a href="#">Help Center</a> | <a href="#">Contact Us</a> | 857-304-2087<br>
+        &copy; 2023 Liaison International. All Rights Reserved.
+    </div>
+</body>
+
+</html>
