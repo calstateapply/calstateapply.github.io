@@ -17,10 +17,36 @@
         .header {
             background-color: #0033a0;
             color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 18px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
+
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .user-info {
+            font-size: 8px;
+            color: lightblue;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: auto;
+            padding-bottom: 20px;
+            /* This pushes the user info to the right */
+        }
+
+
+        .header .user-info {
+            font-size: 12px;
+            text-align: right;
+            white-space: nowrap;
+            margin-bottom: 10px;
+        }
+
 
         .header img {
             max-width: 200px;
@@ -166,7 +192,14 @@
 
 <body>
     <div class="header">
-        <img src="csa-logo.png" alt="Cal State Apply">
+        <div class="user-info">
+            <span>Zohaib Javed | CAS ID: 8743544324 | <a href="#" style="color: white; text-decoration: underline;">Sign
+                    Out</a></span>
+        </div>
+        <div class="logo">
+            <img src="csa-logo.png" alt="Cal State Apply">
+        </div>
+
     </div>
 
     <div class="nav-links">
