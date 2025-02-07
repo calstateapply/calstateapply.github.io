@@ -10,61 +10,78 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
         .header {
             background-color: #0033a0;
             color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
         }
 
-        .header .user-info {
-            font-size: 14px;
+        .header img {
+            max-width: 200px;
+            height: auto;
         }
 
-        .navbar {
+        .menu-toggle {
+            display: block;
             background-color: #0033a0;
-            padding: 10px 20px;
             color: white;
-            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: #0033a0;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            padding: 12px;
+            text-align: center;
+            border-top: 1px solid #ffffff55;
+            display: block;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            background-color: #002280;
         }
 
         .dashboard {
-            padding: 20px;
+            padding: 15px;
+            text-align: center;
         }
 
         .dashboard h2 {
             color: #0033a0;
+            font-size: 20px;
         }
 
         .notifications {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            background-color: white;
             padding: 15px;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .notifications a {
             display: inline-block;
             background-color: #0033a0;
             color: white;
-            padding: 10px 15px;
+            padding: 8px 12px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            font-size: 14px;
         }
 
         .notifications a:hover {
@@ -73,16 +90,16 @@
 
         .sections {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .section {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 20px;
-            flex: 1 1 calc(50% - 20px);
-            box-sizing: border-box;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .footer {
@@ -91,7 +108,7 @@
             padding: 10px;
             text-align: center;
             font-size: 12px;
-            border-top: 1px solid #ddd;
+            margin-top: 20px;
         }
 
         .rejection {
@@ -101,41 +118,52 @@
         }
 
         .rejection p {
-            max-width: 600px;
+            max-width: 90%;
             margin: 10px auto;
             text-align: left;
+        }
+
+        @media (min-width: 600px) {
+            .nav-links {
+                display: flex !important;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                padding: 10px 15px;
+                border: none;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <div>
-            <img src="csa-logo.png" alt="Cal State Apply" style="max-width: 300px; height: auto;">
-        </div>
-        <div class="user-info">
-            Zohaib Javed | CAS ID: 8743544324 | <a href="#" style="color: white;">Sign Out</a>
-        </div>
+        <img src="csa-logo.png" alt="Cal State Apply">
     </div>
 
-    <div class="navbar">
-        <div class="nav-links">
-            <a href="#">My Application</a>
-            <a href="#">Add Program</a>
-            <a href="#">Submit Application</a>
-            <a href="#" onclick="showRejection()">Check Status</a>
-        </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+
+    <div class="nav-links">
+        <a href="#">My Application</a>
+        <a href="#">Add Program</a>
+        <a href="#">Submit Application</a>
+        <a href="#" onclick="showRejection()">Check Status</a>
     </div>
 
     <div class="dashboard">
         <h2>My Application</h2>
-        <p>This dashboard is your application home providing access to each part of the application you need to complete
-            and a high-level overview of your progress.</p>
+        <p>Your application progress overview.</p>
 
         <div class="notifications">
             <h3>Latest Notifications</h3>
             <p><strong>Welcome to the Cal State Apply application</strong><br>Date: 09/25/2024</p>
-            <a href="#">View My Notifications</a>
+            <a href="#">View Notifications</a>
         </div>
 
         <div class="sections">
@@ -160,28 +188,20 @@
 
     <div class="footer">
         CSU Admissions | <a href="#">Help Center</a> | <a href="#">Contact Us</a> | 857-304-2087<br>
-        The California State University | <a href="#">Privacy Policy</a> | <a href="#">Refund Policy</a> | <a
-            href="#">Accessibility Statement</a><br>
         &copy; 2023 Liaison International. All Rights Reserved.
     </div>
 
     <div id="rejection" class="rejection">
-        <img src="sjsu.png" alt="Cal State Apply" style="max-width: 300px; height: auto; margin-bottom: 50px">
+        <img src="sjsu.png" alt="SJSU Logo" style="max-width: 200px; margin-bottom: 20px;">
         <p><strong>From:</strong> grad-admissions@sjsu.edu</p>
         <p><strong>Subject:</strong> Application Decision - Spring 2025</p>
         <p><strong>Dear Applicant,</strong></p>
-        <p>Thank you for your application to the <strong>Master of Science in Data Science</strong> program, offered by
-            the <strong>College of Science</strong> for <strong>Spring 2025</strong>.</p>
-        <p>We have reviewed the information you provided in your Spring 2025 Cal State Apply application. We regret to
-            inform you that you did not meet the admission impact standard for applicants to San Jose State University
-            for Spring 2025. </p>
-        <p>Our inability to select you is due, in part, to the limited access and restrictions of our program and the
-            competitiveness of other applicants. Unfortunately, due to these constraints, we were unable to offer you
-            admission at this time.</p>
-        <p>We appreciate the effort and dedication you have shown throughout this process, and we commend you for your
-            commitment to higher education. We encourage you to consider applying again in a future term or exploring
-            other programs that align with your academic and career goals.</p>
-        <p>We wish you continued success in your academic and professional journey.</p>
+        <p>Thank you for applying to the <strong>Master of Science in Data Science</strong> program at SJSU for
+            <strong>Spring 2025</strong>.</p>
+        <p>We regret to inform you that due to the limited availability and competitiveness of the program, we are
+            unable to offer you admission at this time.</p>
+        <p>We appreciate your efforts and encourage you to apply again in the future. Best wishes on your academic
+            journey.</p>
         <p>Sincerely,</p>
         <p><strong>SJSU College of Science</strong><br>
             <a href="mailto:grad-admissions@sjsu.edu">grad-admissions@sjsu.edu</a>
@@ -189,6 +209,11 @@
     </div>
 
     <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
+        }
+
         function showRejection() {
             document.querySelector('.dashboard').style.display = 'none';
             document.querySelector('.rejection').style.display = 'block';
