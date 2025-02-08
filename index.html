@@ -99,28 +99,72 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            justify-content: center;
-            /* Centers content horizontally */
+            justify-content: space-between;
             border: 1px solid lightblue;
             font-family: 'Times New Roman', Times, serif;
             position: relative;
-            /* Allows absolute positioning inside */
+            cursor: pointer;
+            /* Makes sections clickable */
         }
+
+        .section i {
+            font-size: 40px;
+            /* Adjust icon size to fit within the border */
+            color: #002280;
+            border: 4px solid #28a745;
+            /* Green border */
+            border-radius: 50%;
+            /* Makes the border circular */
+            padding: 10px;
+            /* Ensures uniform padding */
+            width: 70px;
+            /* Set a fixed width */
+            height: 70px;
+            /* Set a fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .dropdown {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+            background-color: #002280;
+            color: white;
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding-left: 20px;
+            /* Add left padding to align items properly */
+            margin: 0;
+            text-align: left;
+            /* Ensures text is left-aligned */
+        }
+
+        .dropdown ul li {
+            padding: 8px 0;
+            /* Add vertical spacing for better readability */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown ul li:last-child {
+            border-bottom: none;
+        }
+
+
 
         .section div {
             flex: 1;
             /* Allows text to take up available space */
             text-align: center;
             /* Centers the text */
-        }
-
-        .section i {
-            font-size: 40px;
-            /* Increase icon size */
-            color: #002280;
-            position: absolute;
-            right: 20px;
-            /* Places icon on the right with spacing */
         }
 
         .footer {
@@ -163,33 +207,72 @@
         </div>
 
         <div class="sections">
-            <div class="section">
-                <i class="fas fa-id-card"></i>
+            <!-- Personal Information -->
+            <div class="section" onclick="toggleDropdown('personalDropdown')">
                 <div>
                     <h3>Personal Information</h3>
-                    <p>✅ 7/7 Sections Completed</p>
+                    <p>7/7 Sections Completed</p>
                 </div>
+                <i class="fas fa-id-card"></i>
             </div>
-            <div class="section">
-                <i class="fas fa-graduation-cap"></i>
+            <div id="personalDropdown" class="dropdown">
+                <ul>
+                    <li><span>✅</span> Release Statement</li>
+                    <li><span>✅</span> Biographic Information</li>
+                    <li><span>✅</span> Contact Information</li>
+                    <li><span>✅</span> Citizenship/Residency Information</li>
+                    <li><span>✅</span> Race & Ethnicity</li>
+                    <li><span>✅</span> Other Information</li>
+                    <li><span>✅</span> Financial and Parental Information</li>
+                </ul>
+            </div>
+
+            <!-- Academic History -->
+            <div class="section" onclick="toggleDropdown('academicDropdown')">
                 <div>
                     <h3>Academic History</h3>
-                    <p>✅ 3/3 Sections Completed</p>
+                    <p>3/3 Sections Completed</p>
                 </div>
+                <i class="fas fa-graduation-cap"></i>
             </div>
-            <div class="section">
-                <i class="fas fa-file-alt"></i>
+            <div id="academicDropdown" class="dropdown">
+                <ul>
+                    <ul>
+                        <ul>
+                            <li><span>✅</span> Colleges Attended</li>
+                            <li><span>✅</span> Standardized Tests</li>
+                            <li><span>✅</span> GPA Entries</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- Supporting Information -->
+            <div class="section" onclick="toggleDropdown('supportingDropdown')">
                 <div>
                     <h3>Supporting Information</h3>
-                    <p>✅ 1/1 Sections Completed</p>
+                    <p>1/1 Sections Completed</p>
                 </div>
+                <i class="fas fa-file-alt"></i>
             </div>
-            <div class="section">
-                <i class="fas fa-book"></i>
+            <div id="supportingDropdown" class="dropdown">
+                <ul>
+                    <li><span>✅</span> Experiences</li>
+                </ul>
+            </div>
+
+            <!-- Program Materials -->
+            <div class="section" onclick="toggleDropdown('programDropdown')">
                 <div>
                     <h3>Program Materials</h3>
-                    <p>✅ 2/2 Sections Completed</p>
+                    <p>2/2 Sections Completed</p>
                 </div>
+                <i class="fas fa-book"></i>
+            </div>
+            <div id="programDropdown" class="dropdown">
+                <ul>
+                    <li><span>✅</span> Data Science</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -199,5 +282,17 @@
         &copy; 2023 Liaison International. All Rights Reserved.
     </div>
 </body>
+
+<script>
+    function toggleDropdown(id) {
+        var dropdown = document.getElementById(id);
+        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+            dropdown.style.display = "block";
+        } else {
+            dropdown.style.display = "none";
+        }
+    }
+</script>
+
 
 </html>
