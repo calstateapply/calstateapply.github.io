@@ -23,40 +23,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            /* Aligns logo and icons in the center */
-            gap: 20px;
-            /* Adds space between the logo and icons */
+        #myapp {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
         }
 
         .logo img {
             max-width: 200px;
         }
 
-        .icon-container {
-            display: flex;
-            gap: 15px;
-            /* Space between the icons */
+        .user-info {
+            font-size: 12px;
+            text-align: right;
+            margin-left: auto;
+            padding-bottom: 30px;
         }
-
-        .icon-container i {
-            font-size: 24px;
-            /* Increase icon size */
-            color: white;
-            cursor: pointer;
-        }
-
-        .icon-container i:hover {
-            color: #ffcc00;
-            /* Highlight effect on hover */
-        }
-
 
         .nav-links {
+            font-size: 14px;
             display: flex;
             justify-content: center;
             background-color: #0033a0;
@@ -67,7 +54,26 @@
             color: white;
             text-decoration: none;
             padding: 10px 15px;
-            font-weight: bold;
+            font-weight: bolder;
+        }
+
+        .nav-links a:hover {
+            background-color: #002280;
+            border-radius: 5px;
+        }
+
+        .dashboard {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            margin-top: auto;
         }
 
         .rejection {
@@ -99,18 +105,12 @@
 
 <body>
     <div class="header">
-        <div class="logo-container">
-            <div class="logo">
-                <img src="csa-logo.png" alt="Cal State Apply">
-            </div>
-            <div class="icon-container">
-                <a href="https://help.liaisonedu.com/Cal_State_Apply_Applicant_Help_Center" title="Help">
-                    <i class="fas fa-circle-question"></i>
-                </a>
-                <a href="#" title="Notifications">
-                    <i class="fas fa-bell"></i>
-                </a>
-            </div>
+        <div class="user-info">
+            <span>Zohaib Javed | CAS ID: 8743544324 | <a href="https://www.calstate.edu/apply"
+                    style="color: white; text-decoration: underline;">Sign Out</a></span>
+        </div>
+        <div class="logo">
+            <img src="csa-logo.png" alt="Cal State Apply">
         </div>
     </div>
 
